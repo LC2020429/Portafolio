@@ -1,0 +1,266 @@
+/* Sección Sobre Mí */
+.sobremi-section {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.sobremi-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.content-wrapper {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 50px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626, #ef4444);
+  border-radius: 2px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 60px;
+}
+
+/* Contenido de texto */
+.text-content {
+  text-align: left;
+}
+
+.intro-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #2d2d2d;
+  margin: 0 0 25px;
+  font-family: 'Inter', sans-serif;
+}
+
+.description-text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Tarjetas de información */
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #dc2626;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  background: #ffffff;
+  border-color: #dc2626;
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.1);
+  transform: translateY(-2px);
+}
+
+.info-card:hover::before {
+  transform: scaleY(1);
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.card-content {
+  flex: 1;
+  text-align: left;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 5px;
+  font-family: 'Inter', sans-serif;
+}
+
+.card-text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6b7280;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Tarjeta de estado especial */
+.status-card .card-content {
+  position: relative;
+}
+
+.status-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: #16a34a;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: pulse-status 2s infinite;
+}
+
+@keyframes pulse-status {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .sobremi-container {
+    padding: 0 30px;
+  }
+  
+  .content-grid {
+    gap: 40px;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+  }
+  
+  .intro-text {
+    font-size: 1.3rem;
+  }
+  
+  .description-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sobremi-section {
+    padding: 60px 0;
+  }
+  
+  .sobremi-container {
+    padding: 0 20px;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .text-content {
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin: 0 0 40px;
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+  }
+  
+  .description-text {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .info-card {
+    padding: 16px;
+  }
+  
+  .card-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
+}
