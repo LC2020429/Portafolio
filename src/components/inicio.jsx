@@ -29,6 +29,14 @@ const Inicio = () => {
 
   return (
     <section id="inicio" className="inicio-section">
+      <div className="sakura-container">
+        {[...Array(15)].map((_, i) => (
+          <div key={i} className={`sakura-petal sakura-petal-${i + 1}`}>
+            🌸
+          </div>
+        ))}
+      </div>
+
       {showAlert && (
         <div className="custom-alert">
           <div className="alert-content">
